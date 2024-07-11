@@ -1,0 +1,35 @@
+#hw_monitor {
+    position: absolute;
+    top: 0em;
+    right: 1em;
+
+    border-radius: 4px;
+    background: var(--input-background-fill) !important;
+    display: flex;
+    flex-direction: column;
+
+    --hw-bar-chart-speed: 1000ms;
+}
+
+#hw_monitor table {
+    margin: 2px 4px;
+}
+
+#hw_monitor table div {
+    display: block;
+    width: 0%;
+    height: 20px;
+    margin: auto 0px;
+    transition: width var(--hw-bar-chart-speed) linear;
+}
+
+#hw_monitor table td {
+    font-weight: bold;
+    color: var(--block-title-text-color);
+}
+
+#hw_monitor table .hw-label {
+    position: absolute;
+    left: 50%;
+    text-shadow: 1px 1px 2px var(--block-label-background-fill);
+}
