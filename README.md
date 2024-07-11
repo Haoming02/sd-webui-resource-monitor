@@ -8,6 +8,9 @@ This is an Extension for the <a href="https://github.com/AUTOMATIC1111/stable-di
 
 > Compatible with [Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge)
 
+> [!IMPORTANT]  
+> This only works with **Nvidia** GPU
+
 ## Settings
 
 In the `Hardware Monitor` section of the **Settings** tab, you can:
