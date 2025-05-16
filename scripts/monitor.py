@@ -12,7 +12,7 @@ HANDLE = None
 def init():
     pynvml.nvmlInit()
     global HANDLE
-    HANDLE = pynvml.nvmlDeviceGetHandleByIndex(opts.monitor_gpu_id)
+    HANDLE = pynvml.nvmlDeviceGetHandleByIndex(getattr(opts, "monitor_gpu_id", 0))
 
 
 def shutdown():
