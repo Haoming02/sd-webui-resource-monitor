@@ -58,22 +58,18 @@
     }
 
     onUiLoaded(() => {
-        const btn = gradioApp().getElementById("hw_btn");
-        const rate = gradioApp()
-            .getElementById("setting_monitor_polling_rate")
-            .querySelector("input").value;
-        const info = gradioApp()
-            .getElementById("hw_info")
-            .querySelector("textarea");
+        const rate = document.getElementById("setting_monitor_polling_rate").querySelector("input").value;
 
         const monitor = createHardwareMonitor();
-        monitor.style.setProperty("--hw-bar-chart-speed", `${rate * 0.8}ms`);
+        monitor.style.setProperty("--hw-bar-chart-speed", `${rate * 0.9}ms`);
 
-        const quicksettings = gradioApp().getElementById("quicksettings");
+        const quicksettings = document.getElementById("quicksettings");
         quicksettings.appendChild(monitor);
 
-        setInterval(() => {
-            const value = info.value.trim().split(", ");
+        setInterval(async () => {
+            const res = await fetch("/resource/monitor");
+            const string = await res.json();
+            const value = string.trim().split(", ");
 
             if (value.length > 1) {
                 const cpu = Number.parseFloat(value[0]);
@@ -84,8 +80,6 @@
                 // console.table({ cpu, ram, gpu, vram });
                 monitor.setUsage(cpu, ram, gpu, vram);
             }
-
-            btn.click();
         }, rate);
     });
 })();

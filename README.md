@@ -6,7 +6,7 @@ This is an Extension for the <a href="https://github.com/AUTOMATIC1111/stable-di
 
 > Compatible with [Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge)
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > This only works with **Nvidia** GPU
 
 ## Settings
@@ -17,9 +17,6 @@ In the `Hardware Monitor` section under the <ins>System</ins> category of the **
     - **Default:** `0`
 - Change the `Polling Rate` for the refresh
     - **Default:** `1000 ms`
-
-## To Do
-- [ ] More configurable entries
 
 <hr>
 
